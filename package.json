@@ -21,6 +21,10 @@
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
+    "@ngrx/core": "^1.2.0",
+    "@ngrx/effects": "^4.0.5",
+    "@ngrx/store": "^4.0.0",
+    "@yaga/leaflet-ng2": "^1.0.0-rc8",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
@@ -45,5 +49,8 @@
     "ts-node": "~3.2.0",
     "tslint": "~5.3.2",
     "typescript": "~2.3.3"
-  }
+  },
+  "peerDependencies": {
+    "@angular/common": ">=2.3.1"
+}
 }
