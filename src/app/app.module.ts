@@ -4,7 +4,7 @@ import { FormsModule }   from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { rootReducer } from './reducers';
+import { reducers } from './reducers';
 import {WeatherMapEffects } from './effects';
 import { YagaModule } from '@yaga/leaflet-ng2';
 import { AppComponent } from './app.component';
@@ -20,7 +20,7 @@ import { MapSquareComponent } from './map-square/map-square.component';
     YagaModule,
     HttpModule,
     FormsModule,
-    StoreModule.forRoot(rootReducer),
+    StoreModule.forRoot(reducers),
     EffectsModule.forRoot([WeatherMapEffects])
   ],
   providers: [],
