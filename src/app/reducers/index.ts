@@ -18,6 +18,6 @@ export const reducers = {
     weatherData:weatherData
  };
 
- export const getweatherData = createFeatureSelector<any[]>('weatherData');
+ export const getweatherData = createFeatureSelector<{}>('weatherData');
 
  

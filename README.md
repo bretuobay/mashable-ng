@@ -30,3 +30,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Read well :
 
 https://github.com/ngrx/platform/blob/master/docs/store/actions.md#typed-actions
+
+https://stackoverflow.com/questions/39552067/what-is-the-purpose-of-ngrx-effects-library?noredirect=1&lq=1

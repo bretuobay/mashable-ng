@@ -9,6 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
+        "../node_modules/@salesforce-ux/design-system/assets/*",
         "favicon.ico"
       ],
       "index": "index.html",
@@ -19,7 +20,9 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../node_modules/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css",
+        "../node_modules/snazzy-info-window/dist/snazzy-info-window.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

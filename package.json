@@ -12,6 +12,8 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.0.0-beta.1",
+    "@agm/snazzy-info-window": "^1.0.0-beta.1",
     "@angular/animations": "^4.2.4",
     "@angular/common": "^4.2.4",
     "@angular/compiler": "^4.2.4",
@@ -24,9 +26,15 @@
     "@ngrx/core": "^1.2.0",
     "@ngrx/effects": "^4.0.5",
     "@ngrx/store": "^4.0.0",
+    "@salesforce-ux/design-system": "^2.4.3",
+    "@types/geojson": "^1.0.4",
+    "@types/mapbox-gl": "^0.39.6",
     "@yaga/leaflet-ng2": "^1.0.0-rc8",
     "core-js": "^2.4.1",
+    "mapbox-gl": "^0.40.1",
+    "ng-lightning": "^2.0.1",
     "rxjs": "^5.4.2",
+    "snazzy-info-window": "^1.1.0",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
@@ -52,5 +60,5 @@
   },
   "peerDependencies": {
     "@angular/common": ">=2.3.1"
-}
+  }
 }

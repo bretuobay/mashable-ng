@@ -1,5 +1,12 @@
 
-yaga-map{
+.yaga-map{
     width: 500px;
     height:500px;
 }
+
+agm-map {
+    height: 660px;
+    width:683px;
+  }
+
+  
