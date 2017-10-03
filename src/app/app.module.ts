@@ -35,7 +35,7 @@ import { MapBoxComponent } from './map-box/map-box.component';
     GoogleMapsComponent,
     LightDashboardComponent,
     MapPopComponent,
-    MapBoxComponent
+    MapBoxComponent,
   ],
   imports: [
     BrowserModule,
