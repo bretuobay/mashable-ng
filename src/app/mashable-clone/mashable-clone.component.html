@@ -1,0 +1,93 @@
+<div class="row pt-5 justify-content-between">
+  <div class="col-md-5">
+    <button class="btn btn-primary" (click)="onClickGetWeather($event)"> Click to get City</button>
+    <div class="pt-5">
+      <div class="col-12 h3"> Currently showing weather for {{name}}</div> <br/>
+      <div class="col-12 h2"> Temperature {{temperature}}</div> <br/>
+      <div class="col-12 h2"> Humidity {{humidity}}</div>
+    </div>
+    <div class="pt-5">
+      <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
+    </div>
+
+    <div class="pt-5">
+      <app-currency-exchange></app-currency-exchange>
+    </div>
+
+
+  </div>
+
+
+
+
+<div class="col-md-7">
+    <div class="row pt-5">
+      <span class="h1"> Ars Technica</span>
+      <app-news-by-source [NewsSource]="'ars-technica'"></app-news-by-source>
+    </div>
+  
+    <div class="row pt-5">
+      <span class="h1">  The Next Web </span>
+      <app-news-by-source [NewsSource]="'the-next-web'"></app-news-by-source>
+  
+    </div>
+  
+    <div class=" row pt-5">
+      <span class="h1"> Tech Crunch </span>
+  
+      <app-news-by-source [NewsSource]="'techcrunch'"></app-news-by-source>
+  
+    </div>
+  </div>
+  
+
+</div>
+
+
+
+
+
+
+
+<!-- 
+    <div class="row pt-5">
+      
+              <agm-map [latitude]="lat" [longitude]="lng" ></agm-map>
+      
+      </div>
+
+
+      <agm-map style="height: 300px" [latitude]="51.673858" [longitude]="7.815982">
+          <agm-snazzy-info-window [isOpen]="true" [latitude]="51.673858" [longitude]="7.815982" [closeWhenOthersOpen]="true">
+            <ng-template>
+              My first Snazzy Info Window!
+            </ng-template>
+          </agm-snazzy-info-window>
+        </agm-map>
+
+    
+     <div class="row pt-5">
+      
+          <yaga-map [lat]="lat" [lng]="lng" [zoom]="11">
+              <yaga-zoom-control></yaga-zoom-control>
+              <yaga-scale-control [metric]="true" [imperial]="false"></yaga-scale-control>
+              <yaga-attribution-control></yaga-attribution-control>
+              
+              <yaga-tile-layer [url]="'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'" [attribution]="'© OpenStreetMap-Mitwirkende'"></yaga-tile-layer>
+              <yaga-marker [(lat)]="lat" [(lng)]="lng" [(draggable)]="editable">
+                <yaga-popup>
+                  <h3>Hello World</h3>
+                  <p>
+                    This is <strong>{{ name }}</strong><br/><br/>
+                    <em>Do you wan't to edit me?: <input type="checkbox" [(ngModel)]="editable"/></em> <br/>
+                    <span *ngIf="editable">
+                      Latitude: <input type="number" [(ngModel)]="lat" step="0.001" width="80"/><br/>
+                      Longitude: <input type="number" [(ngModel)]="lng" step="0.001" width="80"/><br/>
+                      This is: <input type="text" [(ngModel)]="name" width="80"/>
+                    </span>
+                  </p>
+                </yaga-popup>
+              </yaga-marker>
+            </yaga-map>
+  
+</div> -->

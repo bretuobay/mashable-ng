@@ -1,18 +1,28 @@
 import { RouterModule, Routes } from "@angular/router";
-import { GoogleMapsComponent } from "./google-maps/google-maps.component";
-import { MapSquareComponent } from "./map-square/map-square.component";
-import { LightDashboardComponent } from "./light-dashboard/light-dashboard.component";
-import { MapBoxComponent } from "./map-box/map-box.component";
+
+import { MashableCloneComponent } from "./mashable-clone/mashable-clone.component";
+import { CultureComponent } from './culture/culture.component';
+import { EntertainmentComponent } from './entertainment/entertainment.component';
+import { TechComponent } from './tech/tech.component';
+import { ScienceComponent } from './science/science.component';
+import { BusinessComponent } from './business/business.component';
+import { VideosComponent } from './videos/videos.component';
+import { MainComponent } from './main/main.component';
+
 
 export const appRoutes: Routes = [
-  { path: "google-maps", component: GoogleMapsComponent },
-  { path: "yaga-maps", component: MapSquareComponent },
-  { path: "map-box", component: MapBoxComponent },
-  { path: "dashboard", component: LightDashboardComponent },
+  { path: "home", component: MainComponent },
+  { path: "test", component: MashableCloneComponent },
+  { path: "culture", component: CultureComponent },
+  { path: "entertainment", component: EntertainmentComponent },
+  { path: "technology", component: TechComponent },
+  { path: "science", component: ScienceComponent },
+  { path: "business", component: BusinessComponent },
+  { path: "videos", component: VideosComponent },
   {
     path: "",
-    redirectTo: "/yaga-maps",
+    redirectTo: "/home",
     pathMatch: "full"
   },
-  { path: "**", component: MapSquareComponent }
+  { path: "**", component: MashableCloneComponent }
 ];

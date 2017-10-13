@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <!-- Latest Posts -->
+    <main class="posts-listing col-lg-8">
+      <div class="container">
+        <div class="row">
+          <!-- post -->
+          <app-news-by-source [NewsSource]="'mashable'"></app-news-by-source>
+          <app-news-by-source [NewsSource]="'daily-mail'"></app-news-by-source>
+          <app-news-by-source [NewsSource]="'buzzfeed'"></app-news-by-source>
+
+        </div>
+      </div>
+    </main>
+    <aside class="col-lg-4">
+      <!-- Widget [Search Bar Widget]-->
+      <div class="widget search">
+        <header>
+          <h3 class="h6">Search Weather</h3>
+        </header>
+        <form action="#" class="search-form">
+          <div class="form-group">
+            <input type="search" name="cityToSearch" id="cityToSearch" [formControl]="cityToSearch" placeholder=" Search for City?">
+            <button type="submit" class="submit"><i class="icon-search"></i></button>
+          </div>
+        </form>
+
+        <div class="pt-5">
+            <div class="h6"> Currently displaying  </div> <br/>
+          <div class="h6 alert alert-warning"> City :  {{name}}</div> <br/>
+          <div class="h6 alert alert-success"> Temperature :  {{temperature}}</div> <br/>
+          <div class="h6 alert alert-info"> Humidity : {{humidity}}</div>
+        </div>
+        <div class="pt-5">
+          <agm-map [latitude]="lat" [longitude]="lng" class="w-100" [zoom]=8></agm-map>
+        </div>
+
+      </div>
+
+      <!-- Widget [Latest Posts Widget]        -->
+      <div class="widget latest-posts">
+        <header>
+          <h3 class="h6">Currency Exchange</h3>
+        </header>
+
+        <div class="pt-5">
+          <app-currency-exchange></app-currency-exchange>
+        </div>
+
+      </div>
+
+    </aside>
+  </div>
+</div>

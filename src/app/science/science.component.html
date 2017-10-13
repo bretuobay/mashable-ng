@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+      <!-- Latest Posts -->
+      <main class="posts-listing col-lg-8"> 
+        <div class="container">
+          <div class="row">
+            <!-- post -->
+            <app-news-by-source [NewsSource]="'mashable'"></app-news-by-source>
+          </div>
+        </div>
+      </main>
+      <aside class="col-lg-4">
+        
+        <!-- Widget [Latest Posts Widget]        -->
+        <div class="widget latest-posts">
+          <header>
+            <h3 class="h6">Latest From Our Sources</h3>
+          </header>
+          <div class="blog-posts">
+             <ul class="list-group">
+               <li class="list-group-item" *ngFor="let source of sideMashList">
+                 <h1> {{ source.label }}</h1>
+                  <app-side-bar-posts [NewsSource]="source.id"> </app-side-bar-posts>
+               </li>
+             </ul>
+           
+
+          </div>
+             
+           
+        </div>
+      
+      </aside>
+    </div>
+  </div>
+ 
