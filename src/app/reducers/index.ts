@@ -11,6 +11,7 @@ import {
     MemoizedSelector,
 } from '@ngrx/store';
 
+import * as M from '../models';
 
 import { weatherData } from './maps.reducer';
 import { newsData } from './news.reducer';
@@ -22,8 +23,8 @@ export const reducers = {
     currencyData : currencyData
  };
 
- export const getweatherData = createFeatureSelector<{}>('weatherData');
- export const getnewsData = createFeatureSelector<{}>('newsData');
- export const getcurrencyData = createFeatureSelector<{}>('currencyData');
+ export const getweatherData = createFeatureSelector<M.WeatherObject>('weatherData');
+ export const getnewsData = createFeatureSelector<M.NewsBySource[]>('newsData');
+ export const getcurrencyData = createFeatureSelector<M.CurrencyObject[]>('currencyData');
 
  

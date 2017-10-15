@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers } from './reducers';
-import {WeatherMapEffects , CurrentNewsEffects , CurrencyEffects} from './effects';
+import {WeatherMapEffects , CurrentNewsEffects , CurrencyEffects, CurrentRssNewsEffects} from './effects';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -77,7 +77,9 @@ import { SideBarPostsComponent } from './side-bar-posts/side-bar-posts.component
     ),
     FormsModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([WeatherMapEffects, CurrentNewsEffects, CurrencyEffects])
+    EffectsModule.forRoot([WeatherMapEffects,
+       CurrentNewsEffects,
+        CurrencyEffects,CurrentRssNewsEffects])
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
