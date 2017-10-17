@@ -41,6 +41,7 @@ import { ScienceComponent } from './science/science.component';
 import { BusinessComponent } from './business/business.component';
 import { VideosComponent } from './videos/videos.component';
 import { SideBarPostsComponent } from './side-bar-posts/side-bar-posts.component';
+import { RssNewsComponent } from './rss-news/rss-news.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { SideBarPostsComponent } from './side-bar-posts/side-bar-posts.component
     BusinessComponent,
     VideosComponent,
     SideBarPostsComponent,
+    RssNewsComponent,
   ],
   imports: [
     BrowserModule,

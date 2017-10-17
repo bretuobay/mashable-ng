@@ -3,12 +3,12 @@
         <div class="post-thumbnail"><a href="{{article.url}}" class="animsition-link"><img src="{{article.urlToImage}}" alt="..." class="img-fluid"></a></div>
         <div class="post-details">
           <div class="">
-            <div class="date meta-last">{{article.publishedAt}}</div>
+            <div class="date meta-last">{{article.publishedAt | date }}</div>
           </div><a href="{{article.url}}" class="animsition-link">
             <h3 class="h4 w-100">{{article.title}}</h3></a>
           <p class="text-muted">{{article.description}}</p>
           <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
-              <div class="title"><span>{{article.author}}</span></div></a>
+              <div class="title">{{article.author}} </div></a>
           </footer>
         </div>
       </div>
