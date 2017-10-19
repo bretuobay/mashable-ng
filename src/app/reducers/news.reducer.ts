@@ -18,6 +18,7 @@ export function  newsData (state: NewsBySource[] , action: news.NewsActions) : N
 				return  [state, ...newNewsMap];
 
 	  case news.GET_NEWS_DATA_FAILURE:
+
 			return state;
 
 		default:
