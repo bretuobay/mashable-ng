@@ -27,7 +27,7 @@ export class CurrentNewsEffects {
   .map((action : appActions.GetNewsAction) => action.payload)
   .mergeMap(payload => this.http.get( API_URL_ENDPOINT+`?source=${payload}&sortBy=latest&apiKey=${API_KEY}`,{headers}) 
   .map( (res: Response) => {
-       console.log(res.json())
+      //  console.log(res.json())
       return new appActions.GetNewsSuccessAction(res.json())
     }
     )

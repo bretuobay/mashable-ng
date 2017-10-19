@@ -20,17 +20,17 @@ export class SideBarPostsComponent implements OnInit , OnChanges,  AfterViewInit
 
   constructor(private store: Store<AppState> ) {
 
-  
-   
-
    }
 
-   ngAfterViewInit() {
-    // ...
-
-    this.store.dispatch(new appActions.GetNewsAction(this.NewsSource));
+   ngOnChanges(changes: SimpleChanges) {
     
-  
+    if(changes['NewsSource']){
+      this.store.dispatch(new appActions.GetNewsAction(this.NewsSource));
+    }
+  }
+
+   ngAfterViewInit() {
+     
       this.store.select(R.getnewsData).subscribe((data : NewsBySource[]) => {
         
             if(data){
@@ -53,12 +53,7 @@ export class SideBarPostsComponent implements OnInit , OnChanges,  AfterViewInit
    
 }
 
-ngOnChanges(changes: SimpleChanges) {
-  
-  if(changes['NewsSource']){
-    //this.store.dispatch(new appActions.GetNewsAction(this.NewsSource));
-  }
-}
+
 
 }
 

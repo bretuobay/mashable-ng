@@ -31,7 +31,7 @@ export class CurrentRssNewsEffects {
   .map((action : appActions.GetRssNewsAction) => action.payload)
   .mergeMap(payload => this.http.get(`https://cdn.ghanaweb.com/feed/newsfeed.xml`,{headers}) 
   .map( (res: Response) => {
-       console.log(res.json())
+      //  console.log(res.json())
       return new appActions.GetRssNewsSuccessAction(res.json())
     }
     )

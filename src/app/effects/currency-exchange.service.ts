@@ -28,7 +28,7 @@ export class CurrencyEffects {
   .map((action : appActions.GetCurrencyAction) => action.payload)
   .mergeMap(payload => this.http.get( API_URL_ENDPOINT+`${API_KEY}`,{headers}) 
   .map( (res: Response) => {
-       console.log(res.json())
+      //  console.log(res.json())
       return new appActions.GetCurrencySuccessAction(res.json())
     }
     )

@@ -1,4 +1,4 @@
-import { Component, OnInit , Input, Output } from '@angular/core';
+import { Component, OnInit , Input, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from "@ngrx/store";
 import * as appActions from "../actions/";
@@ -14,7 +14,7 @@ import * as _ from 'lodash';
   templateUrl: './news-by-source.component.html',
   styleUrls: ['./news-by-source.component.css']
 })
-export class NewsBySourceComponent implements OnInit {
+export class NewsBySourceComponent implements OnInit, OnChanges {
 
    @Input() NewsSource : string = 'techcrunch';
    public articlesList :  Articles;
@@ -25,9 +25,14 @@ export class NewsBySourceComponent implements OnInit {
 
    }
 
-  ngOnInit() {
+   ngOnChanges(changes: SimpleChanges) {
+    
+    if(changes['NewsSource']){
+      this.store.dispatch(new appActions.GetNewsAction(this.NewsSource));
+    }
+  }
 
-   this.store.dispatch(new appActions.GetNewsAction(this.NewsSource));
+  ngOnInit() {
 
    this.store.select(R.getnewsData).subscribe((data: NewsBySource[]) => {
     

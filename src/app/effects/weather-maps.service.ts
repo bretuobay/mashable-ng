@@ -24,7 +24,7 @@ export class WeatherMapEffects {
   .map((action : appActions.GetWeatherAction) => action.payload)
   .mergeMap(payload => this.http.get( API_URL_ENDPOINT+`/weather?q=${payload}&appid=${API_KEY}`) 
   .map( (res: Response) => {
-       console.log(res.json())
+      //  console.log(res.json())
       return new appActions.GetWeatherSuccessAction(res.json())
     }
     )
