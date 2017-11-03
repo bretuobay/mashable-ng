@@ -35,15 +35,15 @@ export class MainComponent implements OnInit {
       this.checkMapParametersExist(this.destructDataByCity(data));
     });
 
+    this.cityToSearch.setValue(this.name);
+
     this.store.dispatch(new weather.GetWeatherAction(this.name));
 
     this.cityToSearch.valueChanges
       .debounceTime(500)
       .distinctUntilChanged()
       .subscribe(city => {
-        
         this.store.dispatch(new weather.GetWeatherAction(city));
-        
       });
   }
 
@@ -64,7 +64,7 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-   // this.store.dispatch(new weather.GetRssNewsAction('test'));
+    // this.store.dispatch(new weather.GetRssNewsAction('test'));
   }
 
   private setMapParamters(weatherData: WeatherObject) {
