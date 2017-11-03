@@ -34,10 +34,10 @@ export class MainComponent implements OnInit {
     this.store.select(R.getweatherData).subscribe(data => {
       this.checkMapParametersExist(this.destructDataByCity(data));
     });
-
+     // you can possible set name on input 
     this.cityToSearch.setValue(this.name);
 
-    this.store.dispatch(new weather.GetWeatherAction(this.name));
+    this.store.dispatch(new weather.GetWeatherAction(this.cityToSearch.value));
 
     this.cityToSearch.valueChanges
       .debounceTime(500)
