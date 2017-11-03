@@ -64,7 +64,7 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.store.dispatch(new weather.GetRssNewsAction('test'));
+   
   }
 
   private setMapParamters(weatherData: WeatherObject) {

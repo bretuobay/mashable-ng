@@ -8,7 +8,7 @@ import { ScienceComponent } from './science/science.component';
 import { BusinessComponent } from './business/business.component';
 import { VideosComponent } from './videos/videos.component';
 import { MainComponent } from './main/main.component';
-import { RssNewsComponent } from './rss-news/rss-news.component';
+
 
 
 export const appRoutes: Routes = [
@@ -20,7 +20,6 @@ export const appRoutes: Routes = [
   { path: "science", component: ScienceComponent },
   { path: "business", component: BusinessComponent },
   { path: "videos", component: VideosComponent },
-  { path: "local-news", component: RssNewsComponent },
   {
     path: "",
     redirectTo: "/home",

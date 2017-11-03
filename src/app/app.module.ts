@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers } from './reducers';
-import {WeatherMapEffects , CurrentNewsEffects , CurrencyEffects, CurrentRssNewsEffects} from './effects';
+import {WeatherMapEffects , CurrentNewsEffects , CurrencyEffects} from './effects';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -41,7 +41,7 @@ import { ScienceComponent } from './science/science.component';
 import { BusinessComponent } from './business/business.component';
 import { VideosComponent } from './videos/videos.component';
 import { SideBarPostsComponent } from './side-bar-posts/side-bar-posts.component';
-import { RssNewsComponent } from './rss-news/rss-news.component';
+
 
 @NgModule({
   declarations: [
@@ -59,7 +59,6 @@ import { RssNewsComponent } from './rss-news/rss-news.component';
     BusinessComponent,
     VideosComponent,
     SideBarPostsComponent,
-    RssNewsComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +80,7 @@ import { RssNewsComponent } from './rss-news/rss-news.component';
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([WeatherMapEffects,
        CurrentNewsEffects,
-        CurrencyEffects,CurrentRssNewsEffects])
+        CurrencyEffects])
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
