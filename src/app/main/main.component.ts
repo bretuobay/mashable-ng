@@ -4,6 +4,7 @@ import { Store } from "@ngrx/store";
 import * as weather from "../actions/";
 import * as R from "../reducers";
 import { AppState, WeatherObject, SourcesConfig } from "../models";
+import { MainSources } from "../app.sources";
 
 @Component({
   selector: "app-main",
@@ -11,12 +12,7 @@ import { AppState, WeatherObject, SourcesConfig } from "../models";
   styleUrls: ["./main.component.css"]
 })
 export class MainComponent implements OnInit {
-  public mashableList: SourcesConfig[] = [
-    { id: "mashable", label: "Mashable" },
-    { id: "daily-mail", label: "Daily Mail" },
-    { id: "football-italia", label: "Footbal Italia" },
-    { id: "business-insider-uk", label: "Business Insider UK " }
-  ];
+  public mashableList: SourcesConfig[] = MainSources;
   public sideMashList: SourcesConfig[] = [];
   public name: string = "Kumasi";
   public lat: number = 48.5768558;

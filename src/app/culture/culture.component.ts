@@ -4,6 +4,7 @@ import { Store } from "@ngrx/store";
 import * as weather from "../actions/";
 import * as R from "../reducers";
 import { AppState, WeatherObject, SourcesConfig } from "../models";
+import { CultureSources } from "../app.sources";
 
 
 
@@ -14,20 +15,16 @@ import { AppState, WeatherObject, SourcesConfig } from "../models";
 })
 export class CultureComponent implements OnInit {
 
-  public mashableList : SourcesConfig[] = [
-    {id :  'mashable', label : 'Mashable'},
-    { id : 'breitbart-news', label : 'Breitbart News'},
-    {id : 'google-news', label : 'Google News'},
-    { id : 'business-insider-uk' , label : 'Business Insider UK '}
-];
-public sideMashList  : SourcesConfig[] = [];
+  public mashableList: SourcesConfig[] = CultureSources;
+
+  public sideMashList: SourcesConfig[] = [];
 
 
-public currentWeather: Object;
+  public currentWeather: Object;
 
-constructor(private store: Store<AppState>) {
- this.sideMashList = this.mashableList.filter( s => s.id!='mashable');
-}
+  constructor(private store: Store<AppState>) {
+    this.sideMashList = this.mashableList.filter(s => s.id != 'mashable');
+  }
   ngOnInit() {
   }
 

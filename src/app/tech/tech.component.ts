@@ -4,7 +4,7 @@ import { Store } from "@ngrx/store";
 import * as weather from "../actions/";
 import * as R from "../reducers";
 import { AppState, WeatherObject, SourcesConfig } from "../models";
-
+import { TechnologySources } from "../app.sources";
 
 
 @Component({
@@ -14,11 +14,7 @@ import { AppState, WeatherObject, SourcesConfig } from "../models";
 })
 export class TechComponent implements OnInit {
 
-  public mashableList : SourcesConfig[] = [
-    {id :  'mashable', label : 'Mashable'},
-    { id : 'engadget', label : 'Engadget'},
-    {id : 'techcrunch', label : 'techcrunch'},
-];
+  public mashableList : SourcesConfig[] = TechnologySources;
 public sideMashList  : SourcesConfig[] = [];
 
 
