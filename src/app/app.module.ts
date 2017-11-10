@@ -28,7 +28,7 @@ import { TechComponent } from "./tech/tech.component";
 import { ScienceComponent } from "./science/science.component";
 import { BusinessComponent } from "./business/business.component";
 import { VideosComponent } from "./videos/videos.component";
-import { SideBarPostsComponent } from "./side-bar-posts/side-bar-posts.component";
+
 
 @NgModule({
   declarations: [
@@ -43,8 +43,7 @@ import { SideBarPostsComponent } from "./side-bar-posts/side-bar-posts.component
     TechComponent,
     ScienceComponent,
     BusinessComponent,
-    VideosComponent,
-    SideBarPostsComponent
+    VideosComponent
   ],
   imports: [
     BrowserModule,
