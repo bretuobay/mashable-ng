@@ -1,4 +1,4 @@
-<div class="row">
+<div  *ngIf="!isSideBarOpen" class="row">
     <div class="post col-xl-6"  *ngFor="let article of articlesList">
         <div class="post-thumbnail"><a href="{{article.url}}" class="animsition-link"><img src="{{article.urlToImage}}" alt="..." class="img-fluid"></a></div>
         <div class="post-details">
@@ -13,4 +13,16 @@
         </div>
         
       </div>
+</div>
+
+<div  *ngIf="isSideBarOpen">
+<div class="item d-flex align-items-center" *ngFor="let article of articlesList">
+  <div class="image"><img src="{{article.urlToImage}}" alt="..." class="img-fluid"></div>
+  <div class="title"><a href="{{article.url}}" class="animsition-link"><strong>{{article.title}}</strong> </a>
+    <div class="d-flex align-items-center">
+      <div class="views"><i class="icon-eye"></i> {{article.urlImage }}</div>
+      <div class="comments"><i class="icon-comment"></i>12</div>
+    </div>
+  </div>
+</div>
 </div>

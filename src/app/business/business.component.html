@@ -21,7 +21,7 @@
              <ul class="list-group">
                <li class="list-group-item" *ngFor="let source of sideMashList">
                 <h6> {{ source.label }}</h6>
-                  <app-side-bar-posts [NewsSource]="source.id"> </app-side-bar-posts>
+                  <app-news-by-source [isSideBarOpen]="true" [NewsSource]="source.id"> </app-news-by-source>
                </li>
              </ul>
            
