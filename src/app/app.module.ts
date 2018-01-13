@@ -29,7 +29,6 @@ import { ScienceComponent } from "./science/science.component";
 import { BusinessComponent } from "./business/business.component";
 import { VideosComponent } from "./videos/videos.component";
 
-
 @NgModule({
   declarations: [
     AppComponent,
