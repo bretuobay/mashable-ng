@@ -12,12 +12,12 @@ export function newsData(
 ): NewsBySource | any {
   switch (action.type) {
     case news.GET_NEWS_DATA:
-      return null;
+      return state;
 
     case news.GET_NEWS_DATA_SUCCESS:
       let newNewsMap = mapToNewsItemToSource(action.payload);
 
-      return [state, ...newNewsMap];
+      return [state, newNewsMap];
 
     case news.GET_NEWS_DATA_FAILURE:
       return state;
