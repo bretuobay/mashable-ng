@@ -18,9 +18,10 @@ import { newsData } from './news.reducer';
 import { currencyData } from './currency.reducer';
 
 export const reducers = {
-    weatherData:weatherData,
-    newsData : newsData,
-    currencyData : currencyData
+    // weatherData :  weatherData,,
+    weatherData,
+    newsData,
+    currencyData 
  };
 
  export const getweatherData = createFeatureSelector<M.WeatherObject>('weatherData');
