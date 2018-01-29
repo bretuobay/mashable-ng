@@ -29,7 +29,7 @@ export class MainComponent implements OnInit {
     this.store.select(R.getweatherData).subscribe(data => {
       this.checkMapParametersExist(this.destructDataByCity(data));
     });
-     // you can possible set name on input 
+    // you can possible set name on input
     this.cityToSearch.setValue(this.name);
 
     this.store.dispatch(new weather.GetWeatherAction(this.cityToSearch.value));
@@ -58,9 +58,7 @@ export class MainComponent implements OnInit {
       this.store.dispatch(new weather.GetWeatherAction(city));
   }
 
-  ngOnInit() {
-   
-  }
+  ngOnInit() {}
 
   private setMapParamters(weatherData: WeatherObject) {
     this.name = weatherData.name;

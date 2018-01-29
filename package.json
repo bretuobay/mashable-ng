@@ -1,5 +1,5 @@
 {
-    "name": "yaga-leaflet",
+    "name": "angular-mashable-clone",
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
@@ -26,18 +26,9 @@
       "@ngrx/core": "^1.2.0",
       "@ngrx/effects": "^4.0.5",
       "@ngrx/store": "^4.0.0",
-      "@salesforce-ux/design-system": "^2.4.3",
-      "@types/geojson": "^1.0.4",
-      "@types/mapbox-gl": "^0.39.6",
-      "@yaga/leaflet-ng2": "^1.0.0-rc8",
-      "angular2-markdown": "^1.6.0",
       "core-js": "^2.4.1",
       "lodash": "^4.17.4",
-      "mapbox-gl": "^0.40.1",
-      "markdown": "^0.5.0",
-      "ng-lightning": "^2.0.1",
       "ng-select": "^1.0.0-beta.6",
-      "rss-to-json": "^1.0.2",
       "rxjs": "^5.4.2",
       "snazzy-info-window": "^1.1.0",
       "zone.js": "^0.8.14"

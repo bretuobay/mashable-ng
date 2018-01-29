@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { OSM_TILE_LAYER_URL } from "@yaga/leaflet-ng2";
 import { Store } from "@ngrx/store";
 import * as weather from "../actions/";
 import * as R from "../reducers";

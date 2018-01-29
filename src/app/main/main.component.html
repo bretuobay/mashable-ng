@@ -21,14 +21,19 @@
         <form action="#" class="search-form">
           <div class="form-group">
             <input type="search" name="cityToSearch" id="cityToSearch" [formControl]="cityToSearch" placeholder=" Search for City?">
-            <button type="submit" class="submit"><i class="icon-search"></i></button>
+            <button type="submit" class="submit">
+              <i class="icon-search"></i>
+            </button>
           </div>
         </form>
 
         <div class="pt-5">
-            <div class="h6"> Currently displaying  </div> <br/>
-          <div class="h6 alert alert-warning"> City :  {{name}}</div> <br/>
-          <div class="h6 alert alert-success"> Temperature :  {{temperature}}</div> <br/>
+          <div class="h6"> Currently displaying </div>
+          <br/>
+          <div class="h6 alert alert-warning"> City : {{name}}</div>
+          <br/>
+          <div class="h6 alert alert-success"> Temperature : {{temperature}}</div>
+          <br/>
           <div class="h6 alert alert-info"> Humidity : {{humidity}}</div>
         </div>
         <div class="pt-5">
@@ -39,9 +44,9 @@
 
       <!-- Widget [Latest Posts Widget]        -->
       <div class="widget latest-posts">
-        <header>
-          <h3 class="h6">Currency Exchange</h3>
-        </header>
+
+        <h6 class="h6">Currency Exchange</h6>
+
 
         <div class="pt-5">
           <app-currency-exchange></app-currency-exchange>

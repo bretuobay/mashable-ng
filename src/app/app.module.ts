@@ -5,6 +5,8 @@ import { HttpModule } from "@angular/http";
 import { RouterModule } from "@angular/router";
 import { StoreModule } from "@ngrx/store";
 import { EffectsModule } from "@ngrx/effects";
+import { AgmCoreModule } from "@agm/core";
+import { AgmSnazzyInfoWindowModule } from "@agm/snazzy-info-window";
 import { reducers } from "./reducers";
 import {
   WeatherMapEffects,
@@ -12,9 +14,6 @@ import {
   CurrencyEffects
 } from "./effects";
 import { ReactiveFormsModule } from "@angular/forms";
-import { NglModule } from "ng-lightning/ng-lightning";
-import { AgmCoreModule } from "@agm/core";
-import { AgmSnazzyInfoWindowModule } from "@agm/snazzy-info-window";
 import { AppComponent } from "./app.component";
 import { appRoutes } from "./app.routes";
 import { NewsBySourceComponent } from "./news-by-source/news-by-source.component";
@@ -28,7 +27,6 @@ import { TechComponent } from "./tech/tech.component";
 import { ScienceComponent } from "./science/science.component";
 import { BusinessComponent } from "./business/business.component";
 import { VideosComponent } from "./videos/videos.component";
-
 
 @NgModule({
   declarations: [
@@ -50,7 +48,6 @@ import { VideosComponent } from "./videos/videos.component";
     HttpModule,
     ReactiveFormsModule,
     AgmSnazzyInfoWindowModule,
-    NglModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyBiq5XcFuuwbNet77mWhiM7oU7KK-yDU0Q"
     }),
