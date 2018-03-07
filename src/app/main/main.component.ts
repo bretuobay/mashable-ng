@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl } from "@angular/forms";
+import "rxjs/add/operator/debounceTime";
+import "rxjs/add/operator/distinctUntilChanged";
 import { Store } from "@ngrx/store";
 import * as weather from "../store/actions/";
 import * as R from "../store/reducers";

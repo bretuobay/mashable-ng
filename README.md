@@ -1,5 +1,7 @@
 Mashable clone angular
 
+Created with angular cli,
+clone and run script
 
 This app was created to get familiar with the ngrx/Redux like  pattern for state management.
 
