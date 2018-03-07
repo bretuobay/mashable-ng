@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
-import * as weather from "../actions/";
-import * as R from "../reducers";
+import * as weather from "../store/actions/";
+import * as R from "../store/reducers";
 import { AppState, WeatherObject, SourcesConfig } from "../models";
 import { CultureSources } from "../app.sources";
 

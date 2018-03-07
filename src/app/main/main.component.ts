@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl } from "@angular/forms";
 import { Store } from "@ngrx/store";
-import * as weather from "../actions/";
-import * as R from "../reducers";
+import * as weather from "../store/actions/";
+import * as R from "../store/reducers";
 import { AppState, WeatherObject, SourcesConfig } from "../models";
 import { MainSources } from "../app.sources";
 
@@ -29,6 +29,11 @@ export class MainComponent implements OnInit {
     this.store.select(R.getweatherData).subscribe(data => {
       this.checkMapParametersExist(this.destructDataByCity(data));
     });
+
+    // alternative approach
+    // this.store.select(s => s.weatherData).subscribe(data => {
+    //   this.checkMapParametersExist(this.destructDataByCity(data));
+    // });
     // you can possible set name on input
     this.cityToSearch.setValue(this.name);
 

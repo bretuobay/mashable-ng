@@ -7,12 +7,12 @@ import { StoreModule } from "@ngrx/store";
 import { EffectsModule } from "@ngrx/effects";
 import { AgmCoreModule } from "@agm/core";
 import { AgmSnazzyInfoWindowModule } from "@agm/snazzy-info-window";
-import { reducers } from "./reducers";
+import { reducers } from "./store/reducers";
 import {
   WeatherMapEffects,
   CurrentNewsEffects,
   CurrencyEffects
-} from "./effects";
+} from "./store/effects";
 import { ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { appRoutes } from "./app.routes";

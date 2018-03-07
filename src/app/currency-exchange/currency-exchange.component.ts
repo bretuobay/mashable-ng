@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { Store } from "@ngrx/store";
-import * as appActions from "../actions/";
-import * as R from "../reducers";
+import * as appActions from "../store/actions/";
+import * as R from "../store/reducers";
 
 import { AppState, CurrencyObject } from "../models";
 
