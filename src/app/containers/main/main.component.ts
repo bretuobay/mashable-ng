@@ -3,10 +3,10 @@ import { FormControl } from "@angular/forms";
 import "rxjs/add/operator/debounceTime";
 import "rxjs/add/operator/distinctUntilChanged";
 import { Store } from "@ngrx/store";
-import * as weather from "../store/actions/";
-import * as R from "../store/reducers";
-import { AppState, WeatherObject, SourcesConfig } from "../models";
-import { MainSources } from "../app.sources";
+import * as weather from "../../store/actions/";
+import * as R from "../../store/reducers";
+import { AppState, WeatherObject, SourcesConfig } from "../../models";
+import { MainSources } from "../../app.sources";
 
 @Component({
   selector: "app-main",

@@ -16,17 +16,17 @@ import {
 import { ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { appRoutes } from "./app.routes";
-import { NewsBySourceComponent } from "./news-by-source/news-by-source.component";
-import { CurrencyExchangeComponent } from "./currency-exchange/currency-exchange.component";
-import { HeaderComponent } from "./header/header.component";
-import { FooterComponent } from "./footer/footer.component";
-import { MainComponent } from "./main/main.component";
-import { CultureComponent } from "./culture/culture.component";
-import { EntertainmentComponent } from "./entertainment/entertainment.component";
-import { TechComponent } from "./tech/tech.component";
-import { ScienceComponent } from "./science/science.component";
-import { BusinessComponent } from "./business/business.component";
-import { VideosComponent } from "./videos/videos.component";
+import { NewsBySourceComponent } from "./containers/news-by-source/news-by-source.component";
+import { CurrencyExchangeComponent } from "./containers/currency-exchange/currency-exchange.component";
+import { HeaderComponent } from "./components/header/header.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { MainComponent } from "./containers/main/main.component";
+import { CultureComponent } from "./components/culture/culture.component";
+import { EntertainmentComponent } from "./components/entertainment/entertainment.component";
+import { TechComponent } from "./components/tech/tech.component";
+import { ScienceComponent } from "./components/science/science.component";
+import { BusinessComponent } from "./components/business/business.component";
+import { VideosComponent } from "./components/videos/videos.component";
 
 @NgModule({
   declarations: [

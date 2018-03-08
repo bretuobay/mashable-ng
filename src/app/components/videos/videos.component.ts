@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
-import * as weather from "../store/actions/";
-import * as R from "../store/reducers";
-import { AppState, WeatherObject, SourcesConfig } from "../models";
-import { VideoSources } from "../app.sources";
+import * as weather from "../../store/actions/";
+import * as R from "../../store/reducers";
+import { AppState, WeatherObject, SourcesConfig } from "../../models";
+import { VideoSources } from "../../app.sources";
 
 @Component({
   selector: "app-videos",
