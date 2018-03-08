@@ -10,10 +10,8 @@ import { Observable } from "rxjs/Observable";
 import { Action } from "@ngrx/store";
 import { Actions, Effect } from "@ngrx/effects";
 import * as appActions from "../actions/";
-
-const API_KEY = "db9457193cdbb7db418c6749874fb68b";
-const API_URL_ENDPOINT = `http://api.openweathermap.org/data/2.5`;
-
+import { WeatherService } from "../services/weather-api.service";
+import { WeatherObject } from "../../models";
 @Injectable()
 export class WeatherMapEffects {
   @Effect()
@@ -21,15 +19,18 @@ export class WeatherMapEffects {
     .ofType(appActions.GET_WEATHER_DATA)
     .map((action: appActions.GetWeatherAction) => action.payload)
     .mergeMap(payload =>
-      this.http
-        .get(API_URL_ENDPOINT + `/weather?q=${payload}&appid=${API_KEY}`)
-        .map((res: Response) => {
-          return new appActions.GetWeatherSuccessAction(res.json());
+      this.weatherService
+        .getWeatherData(payload)
+        .map((res: WeatherObject) => {
+          return new appActions.GetWeatherSuccessAction(res);
         })
         .catch(() => of({ type: appActions.GET_WEATHER_DATA_FAILURE }))
     );
 
-  constructor(private http: Http, private actions$: Actions) {
+  constructor(
+    private weatherService: WeatherService,
+    private actions$: Actions
+  ) {
     console.log("we hit effects module");
   }
 }

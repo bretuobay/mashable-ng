@@ -10,12 +10,8 @@ import { Actions, Effect } from "@ngrx/effects";
 import { of } from "rxjs/observable/of";
 import "rxjs/add/operator/switchMap";
 import * as appActions from "../actions/";
-
-const API_KEY = "4bd5efbd55fc482e864e824b305950af";
-const API_URL_ENDPOINT = `https://newsapi.org/v1/articles`;
-const headers = new Headers({
-  "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
-});
+import { NewsService } from "../services/news-api.service";
+import { NewsObject } from "../../models";
 
 @Injectable()
 export class CurrentNewsEffects {
@@ -24,19 +20,15 @@ export class CurrentNewsEffects {
     .ofType(appActions.GET_NEWS_DATA)
     .map((action: appActions.GetNewsAction) => action.payload)
     .mergeMap(payload =>
-      this.http
-        .get(
-          API_URL_ENDPOINT +
-            `?source=${payload}&sortBy=latest&apiKey=${API_KEY}`,
-          { headers }
-        )
-        .map((res: Response) => {
-          return new appActions.GetNewsSuccessAction(res.json());
+      this.newsService
+        .getNewsArticlesData(payload)
+        .map((res: NewsObject) => {
+          return new appActions.GetNewsSuccessAction(res);
         })
         .catch(() => of({ type: appActions.GET_NEWS_DATA_FAILURE }))
     );
 
-  constructor(private http: Http, private actions$: Actions) {
+  constructor(private newsService: NewsService, private actions$: Actions) {
     console.log("we hit the news effects module");
   }
 }

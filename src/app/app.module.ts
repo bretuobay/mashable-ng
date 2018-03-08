@@ -13,6 +13,9 @@ import {
   CurrentNewsEffects,
   CurrencyEffects
 } from "./store/effects";
+
+import { WeatherService, NewsService, CurrencyService } from "./store/services";
+import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { appRoutes } from "./app.routes";
@@ -56,6 +59,7 @@ import { VideosComponent } from "./components/videos/videos.component";
       // { enableTracing: true } // <-- debugging purposes only
     ),
     FormsModule,
+    HttpClientModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([
       WeatherMapEffects,
@@ -63,7 +67,7 @@ import { VideosComponent } from "./components/videos/videos.component";
       CurrencyEffects
     ])
   ],
-  providers: [],
+  providers: [WeatherService, NewsService, CurrencyService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

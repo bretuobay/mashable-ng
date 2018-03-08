@@ -1,3 +1,3 @@
-export * from './weather-maps.service';
-export * from './current-news.service';
-export * from './currency-exchange.service';
+export * from './weather-maps.effects';
+export * from './current-news.effects';
+export * from './currency-exchange.effects';

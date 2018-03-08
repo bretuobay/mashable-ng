@@ -10,12 +10,9 @@ import { Actions, Effect } from "@ngrx/effects";
 import { of } from "rxjs/observable/of";
 import "rxjs/add/operator/switchMap";
 import * as appActions from "../actions/";
+import { CurrencyService } from "../services/currency-api.service"
+import { CurrencyObject } from "../../models";
 
-const API_KEY = "hvqc2tfPFDsG8RdWSnolqDI2GYAmhk0V";
-const API_URL_ENDPOINT = `https://forex.1forge.com/1.0.2/quotes?pairs=EURUSD,GBPJPY,AUDUSD&api_key=`;
-const headers = new Headers({
-  "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
-});
 
 @Injectable()
 export class CurrencyEffects {
@@ -24,15 +21,13 @@ export class CurrencyEffects {
     .ofType(appActions.GET_CURRENCY_DATA)
     .map((action: appActions.GetCurrencyAction) => action.payload)
     .mergeMap(payload =>
-      this.http
-        .get(API_URL_ENDPOINT + `${API_KEY}`, { headers })
-        .map((res: Response) => {
-          return new appActions.GetCurrencySuccessAction(res.json());
+      this.currService.getCurrencyData().map((res : CurrencyObject[]) => {
+          return new appActions.GetCurrencySuccessAction(res);
         })
         .catch(() => of({ type: appActions.GET_CURRENCY_DATA_FAILURE }))
     );
 
-  constructor(private http: Http, private actions$: Actions) {
+  constructor(private currService: CurrencyService, private actions$: Actions) {
     console.log("we hit the news effects module");
   }
 }
