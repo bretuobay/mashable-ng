@@ -3,7 +3,6 @@ import { Observable } from "rxjs/Observable";
 import { Store } from "@ngrx/store";
 import * as appActions from "../../store/actions/";
 import * as R from "../../store/reducers";
-
 import { AppState, CurrencyObject } from "../../models";
 
 @Component({

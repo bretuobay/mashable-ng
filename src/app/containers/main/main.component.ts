@@ -22,9 +22,7 @@ export class MainComponent implements OnInit {
   public temperature: string = "";
   public humidity: number = 50;
   public cityToSearch = new FormControl();
-
   public currentWeather: Object;
-
   constructor(private store: Store<AppState>) {
     this.sideMashList = this.mashableList.filter(s => s.id != "mashable");
 

@@ -24,9 +24,7 @@ export class NewsBySourceComponent implements OnInit, OnChanges {
   @Input() NewsSource: string = "techcrunch";
   @Input() isSideBarOpen: boolean = false;
   public articlesList: Articles;
-
   constructor(private store: Store<AppState>) {}
-
   ngOnChanges(changes: SimpleChanges) {
     if (changes["NewsSource"]) {
       this.store.dispatch(new appActions.GetNewsAction(this.NewsSource));
