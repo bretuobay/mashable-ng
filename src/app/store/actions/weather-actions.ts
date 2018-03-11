@@ -1,10 +1,11 @@
 import { Action } from "@ngrx/store";
 import { AppState, WeatherObject } from "../../models";
 
-export const GET_WEATHER_DATA = "[Weather] Get Weather";
-export const GET_WEATHER_DATA_SUCCESS = "[Weather] Get Weather Success";
-export const GET_WEATHER_DATA_FAILURE = "[Weather] Get Weather Failure";
-
+import {
+  GET_WEATHER_DATA,
+  GET_WEATHER_DATA_FAILURE,
+  GET_WEATHER_DATA_SUCCESS
+} from "../../constants";
 export class GetWeatherAction implements Action {
   readonly type = GET_WEATHER_DATA;
 

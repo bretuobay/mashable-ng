@@ -10,6 +10,7 @@ import { Actions, Effect } from "@ngrx/effects";
 import { of } from "rxjs/observable/of";
 import "rxjs/add/operator/switchMap";
 import * as appActions from "../actions/";
+import { GET_CURRENCY_DATA, GET_CURRENCY_DATA_FAILURE, GET_CURRENCY_DATA_SUCCESS} from "../../constants"
 import { CurrencyService } from "../services/currency-api.service";
 import { CurrencyObject } from "../../models";
 
@@ -17,7 +18,7 @@ import { CurrencyObject } from "../../models";
 export class CurrencyEffects {
   @Effect()
   getNewsData$: Observable<Action> = this.actions$
-    .ofType(appActions.GET_CURRENCY_DATA)
+    .ofType(GET_CURRENCY_DATA)
     .map((action: appActions.GetCurrencyAction) => action.payload)
     .mergeMap(payload =>
       this.currService
@@ -25,7 +26,7 @@ export class CurrencyEffects {
         .map((res: CurrencyObject[]) => {
           return new appActions.GetCurrencySuccessAction(res);
         })
-        .catch(() => of({ type: appActions.GET_CURRENCY_DATA_FAILURE }))
+        .catch(() => of({ type: GET_CURRENCY_DATA_FAILURE }))
     );
 
   constructor(private currService: CurrencyService, private actions$: Actions) {

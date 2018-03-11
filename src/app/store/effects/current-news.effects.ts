@@ -10,6 +10,7 @@ import { Actions, Effect } from "@ngrx/effects";
 import { of } from "rxjs/observable/of";
 import "rxjs/add/operator/switchMap";
 import * as appActions from "../actions/";
+import { GET_NEWS_DATA, GET_NEWS_DATA_SUCCESS, GET_NEWS_DATA_FAILURE} from "../../constants"
 import { NewsService } from "../services/news-api.service";
 import { NewsObject } from "../../models";
 
@@ -17,7 +18,7 @@ import { NewsObject } from "../../models";
 export class CurrentNewsEffects {
   @Effect()
   getNewsData$: Observable<Action> = this.actions$
-    .ofType(appActions.GET_NEWS_DATA)
+    .ofType(GET_NEWS_DATA)
     .map((action: appActions.GetNewsAction) => action.payload)
     .mergeMap(payload =>
       this.newsService
@@ -25,7 +26,7 @@ export class CurrentNewsEffects {
         .map((res: NewsObject) => {
           return new appActions.GetNewsSuccessAction(res);
         })
-        .catch(() => of({ type: appActions.GET_NEWS_DATA_FAILURE }))
+        .catch(() => of({ type: GET_NEWS_DATA_FAILURE }))
     );
 
   constructor(private newsService: NewsService, private actions$: Actions) {

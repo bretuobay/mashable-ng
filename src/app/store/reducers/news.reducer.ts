@@ -1,6 +1,7 @@
 import { ActionReducer, Action } from "@ngrx/store";
 
 import * as news from "../actions/news-actions";
+import * as actionTypes from "../../constants";
 
 import { NewsObject, NewsBySource } from "../../models";
 
@@ -11,15 +12,15 @@ export function newsData(
   action: news.NewsActions
 ): NewsBySource | any {
   switch (action.type) {
-    case news.GET_NEWS_DATA:
+    case actionTypes.GET_NEWS_DATA:
       return null;
 
-    case news.GET_NEWS_DATA_SUCCESS:
+    case actionTypes.GET_NEWS_DATA_SUCCESS:
       let newNewsMap = mapToNewsItemToSource(action.payload);
 
       return [state, ...newNewsMap];
 
-    case news.GET_NEWS_DATA_FAILURE:
+    case actionTypes.GET_NEWS_DATA_FAILURE:
       return state;
 
     default:

@@ -1,6 +1,8 @@
 import { ActionReducer, Action } from "@ngrx/store";
 
 import * as currency from "../actions/currency-actions";
+import * as actionTypes from "../../constants";
+
 
 import { CurrencyObject } from "../../models";
 
@@ -9,13 +11,13 @@ export function currencyData(
   action: currency.CurrencyActions
 ) {
   switch (action.type) {
-    case currency.GET_CURRENCY_DATA:
+    case actionTypes.GET_CURRENCY_DATA:
       return [action.payload];
 
-    case currency.GET_CURRENCY_DATA_SUCCESS:
+    case actionTypes.GET_CURRENCY_DATA_SUCCESS:
       return [...action.payload];
 
-    case currency.GET_CURRENCY_DATA_FAILURE:
+    case actionTypes.GET_CURRENCY_DATA_FAILURE:
       return state;
 
     default:

@@ -1,10 +1,11 @@
 import { Action } from "@ngrx/store";
 import { AppState, NewsObject } from "../../models";
 
-export const GET_NEWS_DATA = "[News] Get News";
-export const GET_NEWS_DATA_SUCCESS = "[News] Get News Success";
-export const GET_NEWS_DATA_FAILURE = "[News] Get News Failure";
-
+import {
+  GET_NEWS_DATA,
+  GET_NEWS_DATA_FAILURE,
+  GET_NEWS_DATA_SUCCESS
+} from "../../constants";
 export class GetNewsAction implements Action {
   readonly type = GET_NEWS_DATA;
 

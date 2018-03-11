@@ -1,9 +1,10 @@
 import { Action } from "@ngrx/store";
 import { AppState, CurrencyObject } from "../../models";
-
-export const GET_CURRENCY_DATA = "[Currency] Get Currency";
-export const GET_CURRENCY_DATA_SUCCESS = "[Currency] Get Currency Success";
-export const GET_CURRENCY_DATA_FAILURE = "[Currency] Get Currency Failure";
+import {
+  GET_CURRENCY_DATA,
+  GET_CURRENCY_DATA_FAILURE,
+  GET_CURRENCY_DATA_SUCCESS
+} from "../../constants";
 
 export class GetCurrencyAction implements Action {
   readonly type = GET_CURRENCY_DATA;

@@ -54,10 +54,7 @@ import { VideosComponent } from "./components/videos/videos.component";
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyBiq5XcFuuwbNet77mWhiM7oU7KK-yDU0Q"
     }),
-    RouterModule.forRoot(
-      appRoutes
-      // { enableTracing: true } // <-- debugging purposes only
-    ),
+    RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpClientModule,
     StoreModule.forRoot(reducers),
