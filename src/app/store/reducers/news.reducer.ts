@@ -8,12 +8,12 @@ import { NewsObject, NewsBySource } from "../../models";
 import * as _ from "lodash";
 
 export function newsData(
-  state: NewsBySource[],
+  state: NewsBySource[] =[],
   action: news.NewsActions
 ): NewsBySource | any {
   switch (action.type) {
     case actionTypes.GET_NEWS_DATA:
-      return null;
+      return state;
 
     case actionTypes.GET_NEWS_DATA_SUCCESS:
       let newNewsMap = mapToNewsItemToSource(action.payload);
