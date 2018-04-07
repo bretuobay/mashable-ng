@@ -17,6 +17,14 @@ export const appRoutes: Routes = [
   { path: "business", component: BusinessComponent },
   { path: "videos", component: VideosComponent },
   {
+    path: "login",
+    loadChildren: "./modules/login/login.module#LoginModule"
+  },
+  {
+    path: "register",
+    loadChildren: "./modules/register/register.module#RegisterModule"
+  },
+  {
     path: "",
     redirectTo: "/home",
     pathMatch: "full"
