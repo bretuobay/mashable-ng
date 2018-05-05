@@ -14,13 +14,12 @@ import { BehaviorSubject } from "rxjs/BehaviorSubject";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit{
-  private isAuthState: BehaviorSubject<boolean> = new BehaviorSubject(null);
+  private isAuthState: BehaviorSubject<boolean> = new BehaviorSubject(false);
   constructor(private router: Router) {
+
     this.router.events.forEach((event: NavigationEvent) => {
       if (event instanceof NavigationStart) {
         this.setAuthState(event);
-        console.log(event.url,'on the route')
-        console.log(this.isAuthState.value)
       }
     });
     
@@ -35,11 +34,12 @@ export class AppComponent implements OnInit{
     switch (event.url) {
       case "/login":
       case "/register": {
-        console.log('we in control')
-         this.isAuthState.next(true);
+         this.isAuthState.next(false);
+         break;
       }
       default: {
-         this.isAuthState.next(false);
+         this.isAuthState.next(true);
+         break;
       }
     }
   }

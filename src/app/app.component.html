@@ -1,8 +1,8 @@
 <div class="container-fluid" >
-    <app-header *ngIf="!(isAuthState | async)"></app-header>
+    <app-header [hidden]="!(isAuthState | async)"></app-header>
     <div class="container">
         <router-outlet></router-outlet>
     </div>
-    <app-footer *ngIf="!(isAuthState | async)"></app-footer>
+    <app-footer [hidden]="!(isAuthState | async)"></app-footer>
 </div>
 
