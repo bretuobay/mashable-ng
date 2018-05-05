@@ -16,6 +16,8 @@ export const registerConfig = {
   ...commonConfig,
   confirm_password: "Password Confirm",
   title: "Register Mashable-NG",
-  signup_link: "Please Login",
-  sign_from_app_text: "Please Register with us"
+  name : "Full Name",
+  signup_link: "Already have an account? Sign in!",
+  sign_from_app_text: "Please Register with us",
+  sign_up : "Sign Up"
 };

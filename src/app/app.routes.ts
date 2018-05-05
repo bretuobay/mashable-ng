@@ -22,11 +22,11 @@ export const appRoutes: Routes = [
   },
   {
     path: "register",
-    loadChildren: "./modules/register/register.module#RegisterModule"
+    loadChildren: "./modules/register/register.module#RegisterModule",
   },
   {
     path: "",
-    redirectTo: "/home",
+    redirectTo: "home",
     pathMatch: "full"
   },
   { path: "**", component: MainComponent }
