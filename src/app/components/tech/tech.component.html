@@ -1,18 +1,13 @@
 <div class="container">
     <div class="row">
-      <!-- Latest Posts -->
       <main class="posts-listing col-lg-8"> 
         <div class="container">
           <div class="row">
-            <!-- post -->
             <app-news-by-source [NewsSource]="'ars-technica'"></app-news-by-source>
           </div>
         </div>
       </main>
       <aside class="col-lg-4">
-        
-
-        <!-- Widget [Latest Posts Widget]        -->
         <div class="widget latest-posts">
           <header>
             <h3 class="h6">Latest From Our Sources</h3>
@@ -21,16 +16,11 @@
              <ul class="list-group">
                <li class="list-group-item" *ngFor="let source of sideMashList">
                 <h6> {{ source.label }}</h6>
-                <app-news-by-source [isSideBarOpen]="true" [NewsSource]="source.id"> </app-news-by-source>
+                <app-news-by-source [isSideBarList]="true" [NewsSource]="source.id"> </app-news-by-source>
                </li>
              </ul>
-           
-
           </div>
-             
-           
         </div>
-      
       </aside>
     </div>
   </div>

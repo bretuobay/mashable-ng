@@ -3,9 +3,7 @@ import "rxjs/add/operator/mergeMap";
 import "rxjs/add/operator/catch";
 import "rxjs/add/operator/toArray";
 import { of } from "rxjs/observable/of";
-import "rxjs/add/operator/switchMap";
 import { Injectable } from "@angular/core";
-import { Http, Response } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import { Action } from "@ngrx/store";
 import { Actions, Effect } from "@ngrx/effects";
@@ -28,10 +26,5 @@ export class WeatherMapEffects {
         .catch(() => of({ type: GET_WEATHER_DATA_FAILURE }))
     );
 
-  constructor(
-    private weatherService: WeatherService,
-    private actions$: Actions
-  ) {
-    console.log("we hit effects module");
-  }
+  constructor(private weatherService: WeatherService, private actions$: Actions) {}
 }

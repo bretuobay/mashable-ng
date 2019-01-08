@@ -1,11 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Store } from "@ngrx/store";
-import * as weather from "../../store/actions/";
-import * as R from "../../store/reducers";
-import { AppState, WeatherObject, SourcesConfig } from "../../models";
+import { SourcesConfig } from "../../models";
 import { BusinessSources } from "../../app.sources";
-
-
 
 @Component({
   selector: 'app-business',
@@ -14,18 +9,12 @@ import { BusinessSources } from "../../app.sources";
 })
 export class BusinessComponent implements OnInit {
 
-public mashableList : SourcesConfig[] = BusinessSources;
-
-public sideMashList  : SourcesConfig[] = [];
-
-
-public currentWeather: Object;
-
-constructor(private store: Store<AppState>) {
+public mashableList: SourcesConfig[] = BusinessSources;
+public sideMashList: SourcesConfig[] = [];
+constructor() {
  this.sideMashList = this.mashableList.filter( s => s.id!='mashable');
 }
 
-  ngOnInit() {
-  }
+ngOnInit() {}
 
 }

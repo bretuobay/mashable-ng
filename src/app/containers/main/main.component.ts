@@ -19,7 +19,7 @@ export class MainComponent implements OnInit {
   public name: string = "Kumasi";
   public lat: number = 48.5768558;
   public lng: number = 13.268283;
-  public temperature: string = "";
+  public temperature: number | string;
   public humidity: number = 50;
   public cityToSearch = new FormControl();
   public currentWeather: Object;
@@ -27,14 +27,9 @@ export class MainComponent implements OnInit {
     this.sideMashList = this.mashableList.filter(s => s.id != "mashable");
 
     this.store.select(R.getweatherData).subscribe(data => {
-      this.checkMapParametersExist(this.destructDataByCity(data));
+      this.checkMapParametersExist(data);
     });
 
-    // alternative approach
-    // this.store.select(s => s.weatherData).subscribe(data => {
-    //   this.checkMapParametersExist(this.destructDataByCity(data));
-    // });
-    // you can possible set name on input
     this.cityToSearch.setValue(this.name);
 
     this.store.dispatch(new weather.GetWeatherAction(this.cityToSearch.value));
@@ -53,30 +48,24 @@ export class MainComponent implements OnInit {
     }
   }
 
-  public destructDataByCity(weatherProps) {
-    let data: WeatherObject;
-    return (data = weatherProps);
-  }
-
   public onGetWeather(city: string) {
-    if (city.length > 3)
+    if (city.length >= 2)
       this.store.dispatch(new weather.GetWeatherAction(city));
   }
 
   ngOnInit() {}
 
   private setMapParamters(weatherData: WeatherObject) {
-    this.name = weatherData.name;
-    this.lat = weatherData.coord.lat;
-    this.lng = weatherData.coord.lon;
-    this.temperature = (this.roundN(weatherData.main.temp, 2) - 273.15).toFixed(
-      2
-    );
-    this.humidity = weatherData.main.humidity;
+    const {name, coord, main} = weatherData;
+    this.name = name;
+    this.lat = coord.lat;
+    this.lng = coord.lon;
+    this.temperature = (this.roundN(main.temp, 2) - 273.15).toFixed(2);
+    this.humidity = main.humidity;
   }
 
   private roundN(numInput: number, decimalPlaces: number): number {
-    let tempVal =
+    const tempVal =
       Math.round(numInput * Math.pow(10, decimalPlaces)) /
       Math.pow(10, decimalPlaces);
 

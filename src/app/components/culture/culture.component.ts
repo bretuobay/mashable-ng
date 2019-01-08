@@ -1,11 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Store } from "@ngrx/store";
-import * as weather from "../../store/actions/";
-import * as R from "../../store/reducers";
-import { AppState, WeatherObject, SourcesConfig } from "../../models";
+import { SourcesConfig } from "../../models";
 import { CultureSources } from "../../app.sources";
-
-
 
 @Component({
   selector: 'app-culture',
@@ -15,16 +10,10 @@ import { CultureSources } from "../../app.sources";
 export class CultureComponent implements OnInit {
 
   public mashableList: SourcesConfig[] = CultureSources;
-
   public sideMashList: SourcesConfig[] = [];
-
-
-  public currentWeather: Object;
-
-  constructor(private store: Store<AppState>) {
+  constructor() {
     this.sideMashList = this.mashableList.filter(s => s.id != 'mashable');
   }
-  ngOnInit() {
-  }
 
+  ngOnInit() {}
 }

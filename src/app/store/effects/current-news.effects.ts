@@ -3,14 +3,12 @@ import "rxjs/add/operator/mergeMap";
 import "rxjs/add/operator/catch";
 import "rxjs/add/operator/toArray";
 import { Injectable } from "@angular/core";
-import { Http, Response, Headers } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import { Action } from "@ngrx/store";
 import { Actions, Effect } from "@ngrx/effects";
 import { of } from "rxjs/observable/of";
-import "rxjs/add/operator/switchMap";
 import * as appActions from "../actions/";
-import { GET_NEWS_DATA, GET_NEWS_DATA_SUCCESS, GET_NEWS_DATA_FAILURE} from "../../constants"
+import { GET_NEWS_DATA, GET_NEWS_DATA_FAILURE} from "../../constants"
 import { NewsService } from "../services/news-api.service";
 import { NewsObject } from "../../models";
 
@@ -29,7 +27,5 @@ export class CurrentNewsEffects {
         .catch(() => of({ type: GET_NEWS_DATA_FAILURE }))
     );
 
-  constructor(private newsService: NewsService, private actions$: Actions) {
-    console.log("we hit the news effects module");
-  }
+  constructor(private newsService: NewsService, private actions$: Actions) {}
 }

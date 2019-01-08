@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, Output } from "@angular/core";
-import { Observable } from "rxjs/Observable";
+import { Component, OnInit, Input } from "@angular/core";
 import { Store } from "@ngrx/store";
 import * as appActions from "../../store/actions/";
 import * as R from "../../store/reducers";

@@ -1,8 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Store } from "@ngrx/store";
-import * as weather from "../../store/actions/";
-import * as R from "../../store/reducers";
-import { AppState, WeatherObject, SourcesConfig } from "../../models";
+import { SourcesConfig } from "../../models";
 import { VideoSources } from "../../app.sources";
 
 @Component({
@@ -12,12 +9,8 @@ import { VideoSources } from "../../app.sources";
 })
 export class VideosComponent implements OnInit {
   public mashableList: SourcesConfig[] = VideoSources;
-
   public sideMashList: SourcesConfig[] = [];
-
-  public currentWeather: Object;
-
-  constructor(private store: Store<AppState>) {
+  constructor() {
     this.sideMashList = this.mashableList.filter(s => s.id != "mashable");
   }
 

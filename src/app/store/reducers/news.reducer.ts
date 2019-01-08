@@ -1,35 +1,26 @@
-import { ActionReducer, Action } from "@ngrx/store";
-
+import * as moment from 'moment';
+import {get} from 'lodash';
 import * as news from "../actions/news-actions";
-import * as actionTypes from "../../constants";
+import {GET_NEWS_DATA, GET_NEWS_DATA_SUCCESS, GET_NEWS_DATA_FAILURE} from "../../constants";
 
-import { NewsObject, NewsBySource } from "../../models";
+import { NewsBySource } from "../../models";
 
-import * as _ from "lodash";
 
-export function newsData(
-  state: NewsBySource[] =[],
-  action: news.NewsActions
-): NewsBySource | any {
-  switch (action.type) {
-    case actionTypes.GET_NEWS_DATA:
+export function newsData(state = {}, action: news.NewsActions): NewsBySource | any {
+  const {type, payload} = action;
+  const sourceName: string = get(payload, 'source');
+  switch (type) {
+    case GET_NEWS_DATA:
       return state;
-
-    case actionTypes.GET_NEWS_DATA_SUCCESS:
-      let newNewsMap = mapToNewsItemToSource(action.payload);
-
-      return [state, ...newNewsMap];
-
-    case actionTypes.GET_NEWS_DATA_FAILURE:
+    case GET_NEWS_DATA_SUCCESS:
+    return {
+      ...state,
+      [sourceName]: { news: get(payload, 'articles'), timeStamp: moment()}
+    };
+    case GET_NEWS_DATA_FAILURE:
       return state;
-
     default:
       return state;
   }
 }
 
-function mapToNewsItemToSource(payloaddata) {
-  let newSourceArticles = _.keyBy([payloaddata], "source");
-
-  return newSourceArticles;
-}

@@ -1,8 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Store } from "@ngrx/store";
-import * as weather from "../../store/actions/";
-import * as R from "../../store/reducers";
-import { AppState, WeatherObject, SourcesConfig } from "../../models";
+import { SourcesConfig } from "../../models";
 import { EntertainmentSources } from "../../app.sources";
 
 @Component({
@@ -13,12 +10,9 @@ import { EntertainmentSources } from "../../app.sources";
 export class EntertainmentComponent implements OnInit {
   public mashableList: SourcesConfig[] = EntertainmentSources;
   public sideMashList: SourcesConfig[] = [];
-
-  public currentWeather: Object;
-
-  constructor(private store: Store<AppState>) {
+  constructor() {
     this.sideMashList = this.mashableList.filter(s => s.id != "mashable");
   }
-
+  
   ngOnInit() {}
 }
