@@ -23,13 +23,9 @@ export class MainComponent implements OnInit {
   public humidity: number = 50;
   public cityToSearch = new FormControl();
   public currentWeather: Object;
+  
   constructor(private store: Store<AppState>) {
     this.sideMashList = this.mashableList.filter(s => s.id != "mashable");
-
-    this.store.select(R.getweatherData).subscribe(data => {
-      this.checkMapParametersExist(data);
-    });
-
     this.cityToSearch.setValue(this.name);
 
     this.store.dispatch(new weather.GetWeatherAction(this.cityToSearch.value));
@@ -53,7 +49,11 @@ export class MainComponent implements OnInit {
       this.store.dispatch(new weather.GetWeatherAction(city));
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.store.select(R.getweatherData).subscribe(data => {
+      this.checkMapParametersExist(data);
+    });
+  }
 
   private setMapParamters(weatherData: WeatherObject) {
     const {name, coord, main} = weatherData;
