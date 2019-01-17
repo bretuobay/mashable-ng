@@ -9,7 +9,13 @@ It reads news feeds from https://newsapi.org/ and creates a mashable like clone.
 
 to run :
 
-Clone,
-Run 
-npm install
-npm start 
+[1] Clone,
+[2] Run
+
+  npm install
+  
+  npm start 
+
+Sample page of application:
+
+![Sample Application Page](src/assets/img/sample-home.png)

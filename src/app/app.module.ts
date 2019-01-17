@@ -8,28 +8,23 @@ import { EffectsModule } from "@ngrx/effects";
 import { AgmCoreModule } from "@agm/core";
 import { AgmSnazzyInfoWindowModule } from "@agm/snazzy-info-window";
 import { reducers } from "./store/reducers";
-import {
-  WeatherMapEffects,
-  CurrentNewsEffects,
-  CurrencyEffects
-} from "./store/effects";
-
+import { WeatherMapEffects, CurrentNewsEffects, CurrencyEffects } from "./store/effects";
 import { WeatherService, NewsService, CurrencyService } from "./store/services";
 import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { appRoutes } from "./app.routes";
-import { NewsBySourceComponent } from "./containers/news-by-source/news-by-source.component";
-import { CurrencyExchangeComponent } from "./containers/currency-exchange/currency-exchange.component";
+import { NewsBySourceComponent } from "./widgets/news-by-source/news-by-source.component";
+import { CurrencyExchangeComponent } from "./widgets/currency-exchange/currency-exchange.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
-import { MainComponent } from "./containers/main/main.component";
-import { CultureComponent } from "./components/culture/culture.component";
-import { EntertainmentComponent } from "./components/entertainment/entertainment.component";
-import { TechComponent } from "./components/tech/tech.component";
-import { ScienceComponent } from "./components/science/science.component";
-import { BusinessComponent } from "./components/business/business.component";
-import { VideosComponent } from "./components/videos/videos.component";
+import { MainComponent } from "./widgets/main/main.component";
+import { CultureComponent } from "./screens/culture/culture.component";
+import { EntertainmentComponent } from "./screens/entertainment/entertainment.component";
+import { TechComponent } from "./screens/tech/tech.component";
+import { ScienceComponent } from "./screens/science/science.component";
+import { BusinessComponent } from "./screens/business/business.component";
+import { VideosComponent } from "./screens/videos/videos.component";
 
 @NgModule({
   declarations: [
