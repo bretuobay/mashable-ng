@@ -10,7 +10,7 @@ import { Actions, Effect } from "@ngrx/effects";
 import * as appActions from "../actions/";
 import { GET_WEATHER_DATA, GET_WEATHER_DATA_FAILURE} from "../../constants"
 import { WeatherService } from "../services/weather-api.service";
-import { WeatherObject } from "../../models";
+import { Weather } from "../../models";
 @Injectable()
 export class WeatherMapEffects {
   @Effect()
@@ -20,7 +20,7 @@ export class WeatherMapEffects {
     .mergeMap(payload =>
       this.weatherService
         .getWeatherData(payload)
-        .map((res: WeatherObject) => {
+        .map((res: Weather) => {
           return new appActions.GetWeatherSuccessAction(res);
         })
         .catch(() => of({ type: GET_WEATHER_DATA_FAILURE }))

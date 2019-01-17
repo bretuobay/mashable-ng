@@ -1,5 +1,5 @@
 import { Action } from "@ngrx/store";
-import { WeatherObject } from "../../models";
+import { Weather } from "../../models";
 import { GET_WEATHER_DATA,GET_WEATHER_DATA_FAILURE,GET_WEATHER_DATA_SUCCESS } from "../../constants";
 export class GetWeatherAction implements Action {
   readonly type = GET_WEATHER_DATA;
@@ -8,7 +8,7 @@ export class GetWeatherAction implements Action {
 
 export class GetWeatherSuccessAction implements Action {
   readonly type = GET_WEATHER_DATA_SUCCESS;
-  constructor(public payload: WeatherObject) {}
+  constructor(public payload: Weather) {}
 }
 
 export class GetWeatherFailureAction implements Action {

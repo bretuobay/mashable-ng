@@ -5,7 +5,7 @@ import "rxjs/add/operator/distinctUntilChanged";
 import { Store } from "@ngrx/store";
 import * as weather from "../../store/actions/";
 import * as R from "../../store/reducers";
-import { AppState, WeatherObject, SourcesConfig } from "../../models";
+import { AppState, Weather, SourcesConfiguration } from "../../models";
 import { MainSources } from "../../app.sources";
 
 @Component({
@@ -14,8 +14,8 @@ import { MainSources } from "../../app.sources";
   styleUrls: ["./main.component.css"]
 })
 export class MainComponent implements OnInit {
-  public mashableList: SourcesConfig[] = MainSources;
-  public sideMashList: SourcesConfig[] = [];
+  public mashableList: SourcesConfiguration[] = MainSources;
+  public sideMashList: SourcesConfiguration[] = [];
   public name: string = "Kumasi";
   public lat: number = 48.5768558;
   public lng: number = 13.268283;
@@ -38,7 +38,7 @@ export class MainComponent implements OnInit {
       });
   }
 
-  public checkMapParametersExist(weatherData: WeatherObject) {
+  public checkMapParametersExist(weatherData: Weather) {
     if (weatherData && weatherData.hasOwnProperty("coord")) {
       this.setMapParamters(weatherData);
     }
@@ -55,7 +55,7 @@ export class MainComponent implements OnInit {
     });
   }
 
-  private setMapParamters(weatherData: WeatherObject) {
+  private setMapParamters(weatherData: Weather) {
     const {name, coord, main} = weatherData;
     this.name = name;
     this.lat = coord.lat;

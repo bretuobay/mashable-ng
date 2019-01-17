@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { SourcesConfig } from "../../models";
+import { SourcesConfiguration } from "../../models";
 import { CultureSources } from "../../app.sources";
 
 @Component({
@@ -9,8 +9,8 @@ import { CultureSources } from "../../app.sources";
 })
 export class CultureComponent implements OnInit {
 
-  public mashableList: SourcesConfig[] = CultureSources;
-  public sideMashList: SourcesConfig[] = [];
+  public mashableList: SourcesConfiguration[] = CultureSources;
+  public sideMashList: SourcesConfiguration[] = [];
   constructor() {
     this.sideMashList = this.mashableList.filter(s => s.id != 'mashable');
   }

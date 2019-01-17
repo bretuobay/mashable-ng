@@ -3,10 +3,10 @@ import { ActionReducer, Action } from "@ngrx/store";
 import * as weather from "../actions/weather-actions";
 import * as actionTypes from "../../constants";
 
-import { WeatherObject } from "../../models";
+import { Weather } from "../../models";
 
 export function weatherData(
-  state: WeatherObject,
+  state: Weather,
   action: weather.WeatherActions
 ) {
   switch (action.type) {

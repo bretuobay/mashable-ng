@@ -23,8 +23,8 @@ export const reducers = {
     currencyData : currencyData
  };
 
- export const getweatherData = createFeatureSelector<M.WeatherObject>('weatherData');
+ export const getweatherData = createFeatureSelector<M.Weather>('weatherData');
  export const getnewsData = createFeatureSelector<M.NewsBySource[]>('newsData');
- export const getcurrencyData = createFeatureSelector<M.CurrencyObject[]>('currencyData');
+ export const getcurrencyData = createFeatureSelector<M.Currency[]>('currencyData');
 
  

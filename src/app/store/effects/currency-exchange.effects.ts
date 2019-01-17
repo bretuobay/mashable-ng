@@ -9,7 +9,7 @@ import { of } from "rxjs/observable/of";
 import * as appActions from "../actions/";
 import { GET_CURRENCY_DATA, GET_CURRENCY_DATA_FAILURE } from "../../constants"
 import { CurrencyService } from "../services/currency-api.service";
-import { CurrencyObject } from "../../models";
+import { Currency } from "../../models";
 
 @Injectable()
 export class CurrencyEffects {
@@ -19,7 +19,7 @@ export class CurrencyEffects {
     .map((action: appActions.GetCurrencyAction) => action.payload)
     .mergeMap(payload =>
       this.currService.getCurrencyData(payload)
-        .map((res: CurrencyObject[]) => {
+        .map((res: Currency[]) => {
           return new appActions.GetCurrencySuccessAction(res);
         })
         .catch(() => of({ type: GET_CURRENCY_DATA_FAILURE }))

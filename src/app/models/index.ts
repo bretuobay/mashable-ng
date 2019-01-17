@@ -1,4 +1,4 @@
-export class WeatherObject {
+export class Weather {
   public coord;
   public weather;
   public base;
@@ -12,7 +12,7 @@ export class WeatherObject {
   public cod;
 }
 
-export class SourcesConfig {
+export class SourcesConfiguration {
   id: string;
   label: string;
   category?: string;
@@ -27,7 +27,7 @@ export class Articles {
   public publishedAt: Date;
 }
 
-export class NewsObject {
+export class News {
   articles: Articles;
   status: string;
   source: string;
@@ -35,10 +35,10 @@ export class NewsObject {
 }
 
 export class NewsBySource {
-  [source: string]: NewsObject;
+  [source: string]: News;
 }
 
-export class CurrencyObject {
+export class Currency {
   symbol: string;
   price: number;
   bid: number;
@@ -47,7 +47,7 @@ export class CurrencyObject {
 }
 
 export class AppState {
-  weatherData: WeatherObject;
-  newsData: NewsObject;
-  currencyData: CurrencyObject;
+  weatherData: Weather;
+  newsData: News;
+  currencyData: Currency;
 }

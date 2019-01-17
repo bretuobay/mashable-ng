@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from "@angular/core";
 import { Store } from "@ngrx/store";
 import * as appActions from "../../store/actions/";
 import * as R from "../../store/reducers";
-import { AppState, CurrencyObject } from "../../models";
+import { AppState, Currency } from "../../models";
 
 @Component({
   selector: "app-currency-exchange",
@@ -11,7 +11,7 @@ import { AppState, CurrencyObject } from "../../models";
 })
 export class CurrencyExchangeComponent implements OnInit {
   @Input() CurrencyRatesList?: string = "EURUSD,GBPJPY,AUDUSD";
-  public currencyList: CurrencyObject[];
+  public currencyList: Currency[];
 
   constructor(private store: Store<AppState>) {}
 
@@ -20,7 +20,7 @@ export class CurrencyExchangeComponent implements OnInit {
       new appActions.GetCurrencyAction(this.CurrencyRatesList)
     );
 
-    this.store.select(R.getcurrencyData).subscribe((data: CurrencyObject[]) => {
+    this.store.select(R.getcurrencyData).subscribe((data: Currency[]) => {
       this.currencyList = data;
     });
   }

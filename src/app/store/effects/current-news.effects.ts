@@ -10,7 +10,7 @@ import { of } from "rxjs/observable/of";
 import * as appActions from "../actions/";
 import { GET_NEWS_DATA, GET_NEWS_DATA_FAILURE} from "../../constants"
 import { NewsService } from "../services/news-api.service";
-import { NewsObject } from "../../models";
+import { News } from "../../models";
 
 @Injectable()
 export class CurrentNewsEffects {
@@ -21,7 +21,7 @@ export class CurrentNewsEffects {
     .mergeMap(payload =>
       this.newsService
         .getNewsArticlesData(payload)
-        .map((res: NewsObject) => {
+        .map((res: News) => {
           return new appActions.GetNewsSuccessAction(res);
         })
         .catch(() => of({ type: GET_NEWS_DATA_FAILURE }))

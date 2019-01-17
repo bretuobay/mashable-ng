@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { SourcesConfig } from "../../models";
+import { SourcesConfiguration } from "../../models";
 import { EntertainmentSources } from "../../app.sources";
 
 @Component({
@@ -8,8 +8,8 @@ import { EntertainmentSources } from "../../app.sources";
   styleUrls: ["./entertainment.component.css"]
 })
 export class EntertainmentComponent implements OnInit {
-  public mashableList: SourcesConfig[] = EntertainmentSources;
-  public sideMashList: SourcesConfig[] = [];
+  public mashableList: SourcesConfiguration[] = EntertainmentSources;
+  public sideMashList: SourcesConfiguration[] = [];
   constructor() {
     this.sideMashList = this.mashableList.filter(s => s.id != "mashable");
   }

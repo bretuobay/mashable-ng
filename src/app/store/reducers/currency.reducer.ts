@@ -3,10 +3,10 @@ import { ActionReducer, Action } from "@ngrx/store";
 import * as currency from "../actions/currency-actions";
 import * as actionTypes from "../../constants";
 
-import { CurrencyObject } from "../../models";
+import { Currency } from "../../models";
 
 export function currencyData(
-  state: CurrencyObject[] = [],
+  state: Currency[] = [],
   action: currency.CurrencyActions
 ) {
   switch (action.type) {
