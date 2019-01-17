@@ -1,0 +1,10 @@
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let curr of currencyList">
+        <ul class="list-group">
+            <li class="list-group-item inner"> Symbol :{{ curr.symbol }} </li>
+            <li class="list-group-item inner"> Price : {{ curr.price }} </li>
+            <li class="list-group-item inner"> Bid :{{curr.bid }} </li>
+            <li class="list-group-item inner"> Ask :{{ curr.ask }} </li>
+        </ul>
+    </li>
+</ul>
