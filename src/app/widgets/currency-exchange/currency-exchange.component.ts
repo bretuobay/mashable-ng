@@ -10,15 +10,15 @@ import { AppState, Currency } from "../../models";
   styleUrls: ["./currency-exchange.component.css"]
 })
 export class CurrencyExchangeComponent implements OnInit {
-  @Input() CurrencyRatesList?: string = "EURUSD,GBPJPY,AUDUSD";
+  
+  @Input() currencyRatesList?: string = "EURUSD,GBPJPY,AUDUSD";
+
   public currencyList: Currency[];
 
   constructor(private store: Store<AppState>) {}
 
   ngOnInit() {
-    this.store.dispatch(
-      new appActions.GetCurrencyAction(this.CurrencyRatesList)
-    );
+    this.store.dispatch(new appActions.GetCurrencyAction(this.currencyRatesList));
 
     this.store.select(R.getcurrencyData).subscribe((data: Currency[]) => {
       this.currencyList = data;

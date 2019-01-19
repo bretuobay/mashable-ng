@@ -9,8 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev": "ng serve node node_modules/node-mock-server/init",
-    "test:cover:CI": "npm run test:CI -- --coverage && cat ./coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
+    "dev": "ng serve node node_modules/node-mock-server/init"
   },
   "private": true,
   "dependencies": {

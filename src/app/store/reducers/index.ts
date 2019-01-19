@@ -1,15 +1,5 @@
 
-import {
-    ActionReducerMap,
-    createSelector,
-    createFeatureSelector,
-    compose,
-    ActionReducer,
-    combineReducers,
-    Action,
-    ActionReducerFactory,
-    MemoizedSelector,
-} from '@ngrx/store';
+import { createFeatureSelector } from '@ngrx/store';
 
 import * as M from '../../models';
 
