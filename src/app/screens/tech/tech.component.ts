@@ -1,8 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Store } from "@ngrx/store";
-import * as weather from "../../store/actions/";
-import * as R from "../../store/reducers";
-import { AppState, Weather, SourcesConfiguration } from "../../models";
+import { SourcesConfiguration } from "../../models";
 import { TechnologySources } from "../../app.sources";
 
 @Component({
@@ -16,7 +13,7 @@ export class TechComponent implements OnInit {
 
   public currentWeather: Object;
 
-  constructor(private store: Store<AppState>) {
+  constructor() {
     this.sideMashList = this.mashableList.filter(s => s.id != "mashable");
   }
 
