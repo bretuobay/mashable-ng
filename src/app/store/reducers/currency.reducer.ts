@@ -1,22 +1,15 @@
-import { ActionReducer, Action } from "@ngrx/store";
-
-import * as currency from "../actions/currency-actions";
-import * as actionTypes from "../../constants";
-
+import { CurrencyActions } from "../actions/currency-actions";
+import { GET_CURRENCY_DATA_FAILURE, GET_CURRENCY_DATA_SUCCESS, GET_CURRENCY_DATA } from "../../constants";
 import { Currency } from "../../models";
 
-export function currencyData(
-  state: Currency[] = [],
-  action: currency.CurrencyActions
-) {
+export function currencyData(state: Currency[] = [], action: CurrencyActions) {
   switch (action.type) {
-    case actionTypes.GET_CURRENCY_DATA:
+    case GET_CURRENCY_DATA:
       return state;
-    case actionTypes.GET_CURRENCY_DATA_SUCCESS:
+    case GET_CURRENCY_DATA_SUCCESS:
       return [...action.payload];
-    case actionTypes.GET_CURRENCY_DATA_FAILURE:
+    case GET_CURRENCY_DATA_FAILURE:
       return state;
-
     default:
       return state;
   }

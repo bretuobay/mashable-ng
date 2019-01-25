@@ -8,7 +8,6 @@ import { BusinessSources } from "../../app.sources";
   styleUrls: ['./business.component.css']
 })
 export class BusinessComponent implements OnInit {
-
 public mashableList: SourcesConfiguration[] = BusinessSources;
 public sideMashList: SourcesConfiguration[] = [];
 constructor() {

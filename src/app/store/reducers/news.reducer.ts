@@ -1,10 +1,10 @@
 import * as moment from 'moment';
-import {get} from 'lodash';
-import * as news from "../actions/news-actions";
-import {GET_NEWS_DATA, GET_NEWS_DATA_SUCCESS, GET_NEWS_DATA_FAILURE} from "../../constants";
+import { get } from 'lodash';
+import { NewsActions } from "../actions/news-actions";
+import { GET_NEWS_DATA, GET_NEWS_DATA_SUCCESS, GET_NEWS_DATA_FAILURE } from "../../constants";
 import { NewsBySource } from "../../models";
 
-export function newsData(state = {}, action: news.NewsActions): NewsBySource | any {
+export function newsData(state = {}, action: NewsActions): NewsBySource | any {
   const {type, payload} = action;
   const sourceName: string = get(payload, 'source');
   switch (type) {
