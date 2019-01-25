@@ -12,10 +12,8 @@ export function currencyData(
   switch (action.type) {
     case actionTypes.GET_CURRENCY_DATA:
       return state;
-
     case actionTypes.GET_CURRENCY_DATA_SUCCESS:
-      return Object.assign([...state], action.payload);
-
+      return [...action.payload];
     case actionTypes.GET_CURRENCY_DATA_FAILURE:
       return state;
 

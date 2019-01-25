@@ -1,8 +1,5 @@
-import { ActionReducer, Action } from "@ngrx/store";
-
 import * as weather from "../actions/weather-actions";
 import * as actionTypes from "../../constants";
-
 import { Weather } from "../../models";
 
 export function weatherData(

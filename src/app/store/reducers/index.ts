@@ -1,11 +1,9 @@
 
 import { createFeatureSelector } from '@ngrx/store';
-
-import * as M from '../../models';
-
-import { weatherData } from './maps.reducer';
+import { weatherData } from './weather.reducer';
 import { newsData } from './news.reducer';
 import { currencyData } from './currency.reducer';
+import * as M from '../../models';
 
 export const reducers = {
     weatherData:weatherData,
